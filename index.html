@@ -35,22 +35,25 @@
         </div>
         <div>
           <label for="email">EMAIL</label>
-          <input type="email" id="email" name="email" required>
+          <input type="email" id="email" name="email" required pattern="([a-zA-Z0-9\\_\\-\\.]+)@([a-zA-Z]+).(.+)"
+          placeholder="email@address.com">
           <span></span>
         </div>
         <div>
           <label for="phone-number">PHONE NUMBER</label>
-          <input type="tel" id="phone-number" name="phone-number">
+          <input type="tel" id="phone-number" name="phone-number" minlength="8">
           <span></span>
         </div>
         <div>
           <label for="password">PASSWORD</label>
-          <input type="password" id="password" name="password" required>
+          <input type="password" id="password" name="password" minlength="8" required 
+          pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$">
           <span></span>
         </div>
         <div>
           <label for="comfirm-pass">CONFIRM PASSWORD</label>
-          <input type="password" id="comfirm-pass" name="password" required>
+          <input type="password" id="comfirm-pass" name="password" minlength="8" required
+          pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$">
           <span></span>
         </div>
       </div>

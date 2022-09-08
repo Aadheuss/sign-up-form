@@ -466,6 +466,7 @@ header>div {
 div[id='header']+div {
   background-color: var(--base-bg-color);
   padding: var(--form-margin);
+  
 }
 
 div[id='header']+div>:not(.intro) {
@@ -475,6 +476,7 @@ div[id='header']+div>:not(.intro) {
 .intro {
   padding: 1.5rem 0;
 }
+
 .intro,
 div>div>button+p {
   font-size: 1.05rem;
@@ -496,7 +498,8 @@ input {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  column-gap: 0;
+  column-gap: 2.5rem;
+  padding-right: 2.5rem;
 }
 
 p:first-child {
@@ -532,8 +535,8 @@ input:required + span::after {
   font-size: 1.2rem;
   position: absolute;
   content: "*";
-  top: calc( var(--input-height) * -1 - 1.2rem);
-  left: calc(var(--input-width) - 6px);
+  top: calc( var(--input-height) * -1 - 1.5rem);
+  left: calc(var(--input-width));
 }
 
 input:invalid +span::before,
@@ -541,7 +544,7 @@ input:valid +span::before  {
   font-size: 0.9rem;
   position: absolute;
   top: calc(var(--input-height)*-1);
-  left: calc(var(--input-width) + 1rem);
+  left: calc(var(--input-width) + 1.25rem);
 }
 
 input:invalid +span::before {
@@ -570,6 +573,7 @@ input {
   border: none;
   width: var(--input-width);
   height: var(--input-height);
+  padding: 0.1rem 0.25rem;
 }
 
 button {
@@ -595,5 +599,5 @@ input:valid {
 }
 
 input:focus-visible {
-  outline: 2.7px double #a1d5ff;
+  outline: 2.7px double #00b7ff;
 }
