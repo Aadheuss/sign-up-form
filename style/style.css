@@ -62,7 +62,8 @@
   --base-bg-color: #000000;
   --form-margin: 0 3rem;
   --input-width: 300px;
-  --input-height: 24px;
+  --input-height: 1.5rem;
+  --label-font-size: 0.9rem;
 }
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
@@ -535,7 +536,7 @@ input:required + span::after {
   font-size: 1.2rem;
   position: absolute;
   content: "*";
-  top: calc( var(--input-height) * -1 - 1.5rem);
+  bottom: calc( var(--input-height) + var(--label-font-size));
   left: calc(var(--input-width));
 }
 
@@ -543,7 +544,7 @@ input:invalid:not(:placeholder-shown) +span::before,
 input:valid:not(:placeholder-shown) +span::before  {
   font-size: 0.9rem;
   position: absolute;
-  top: calc(var(--input-height)*-1);
+  bottom: calc(var(--input-height) - 0.1rem);
   left: calc(var(--input-width) + 1.25rem);
 }
 
@@ -560,7 +561,7 @@ input:valid:not(:placeholder-shown) +span::before {
 label,
 button,
 div>div>button+p {
-  font-size: 0.9rem;
+  font-size: var(--label-font-size);
   font-weight: 500;
 }
 
@@ -600,4 +601,40 @@ input:valid:not(:placeholder-shown) {
 
 input:focus-visible {
   outline: 2.7px double #00b7ff;
+}
+
+@media only screen and (orientation: portrait) {
+  :root {
+    --input-width: 50vw;
+  }
+  #input {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 1fr);
+    column-gap: 0;
+  }
+
+  #header{
+    width: 100%;
+    height: auto;
+  }
+
+  #header+div {
+    max-width: 100vw;
+    position: absolute;
+    top: calc(72px + 2rem);
+    background-color: rgba(0, 0, 0, 0.9);
+    padding-bottom: 2rem;
+  }
+
+  input {
+    width: 50vw;
+  }
+
+  .intro {
+    font-size: 1rem;
+  }
+
+  form>p:first-child {
+    font-size: 1.5rem;
+  }
 }
