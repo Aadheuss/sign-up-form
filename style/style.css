@@ -539,20 +539,20 @@ input:required + span::after {
   left: calc(var(--input-width));
 }
 
-input:invalid +span::before,
-input:valid +span::before  {
+input:invalid:not(:placeholder-shown) +span::before,
+input:valid:not(:placeholder-shown) +span::before  {
   font-size: 0.9rem;
   position: absolute;
   top: calc(var(--input-height)*-1);
   left: calc(var(--input-width) + 1.25rem);
 }
 
-input:invalid +span::before {
+input:invalid:not(:placeholder-shown) +span::before {
   content: "✖";
   color: var(--invalid-color);
 }
 
-input:valid +span::before {
+input:valid:not(:placeholder-shown) +span::before {
   content: "✓";
   color: var(--valid-color);
 }
@@ -590,11 +590,11 @@ a {
   font-weight: 600;
 }
 
-input:invalid {
+input:invalid:not(:placeholder-shown) {
   outline: 2.7px double var(--invalid-color);
 }
 
-input:valid {
+input:valid:not(:placeholder-shown) {
   outline: 2.7px double var(--valid-color);
 }
 
