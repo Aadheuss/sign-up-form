@@ -536,7 +536,7 @@ input:required + span::after {
   font-size: 1.2rem;
   position: absolute;
   content: "*";
-  bottom: calc( var(--input-height) + var(--label-font-size));
+  bottom: calc( var(--input-height) + calc(1rem - 0.18rem));
   left: calc(var(--input-width));
 }
 
@@ -603,31 +603,11 @@ input:focus-visible {
   outline: 2.7px double #00b7ff;
 }
 
-@media only screen and (orientation: portrait) {
-  :root {
-    --input-width: 50vw;
-  }
+@media only screen and (orientation: portrait), (max-width: 769px) {
   #input {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(6, 1fr);
     column-gap: 0;
-  }
-
-  #header{
-    width: 100%;
-    height: auto;
-  }
-
-  #header+div {
-    max-width: 100vw;
-    position: absolute;
-    top: calc(72px + 2rem);
-    background-color: rgba(0, 0, 0, 0.9);
-    padding-bottom: 2rem;
-  }
-
-  input {
-    width: 50vw;
   }
 
   .intro {
@@ -636,5 +616,38 @@ input:focus-visible {
 
   form>p:first-child {
     font-size: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  #header+div {
+    max-width: 100vw;
+    margin-right: auto;
+    margin-left: auto;
+    left: 0;
+    right: 0;
+    position: absolute;
+    top: calc(72px + 2rem);
+    background-color: rgba(0, 0, 0, 0.9);
+    padding-bottom: 2rem;
+  }
+
+  #header{
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media only screen and (min-width: 770px) and (max-width: 850px) {
+  :root {
+    --input-width: 35vw;
+  }
+}
+
+
+@media only screen and (max-width: 480px) {
+  :root {
+    --form-margin: 0 1.75rem;
+    --input-width: 60vw;
   }
 }
