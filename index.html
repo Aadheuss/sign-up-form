@@ -42,7 +42,7 @@
         </div>
         <div>
           <label for="phone-number">PHONE NUMBER</label>
-          <input type="tel" id="phone-number" name="phone-number" minlength="8" placeholder=" ">
+          <input type="tel" id="phone-number" name="phone-number" minlength="8" placeholder="123-456-7890" pattern="\d{3}[\-]\d{3}[\-]\d{4}">
           <span></span>
         </div>
         <div>
@@ -50,12 +50,14 @@
           <input type="password" id="password" name="password" minlength="8" required 
           pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" placeholder=" ">
           <span></span>
+          <div></div>
         </div>
         <div>
           <label for="confirm-pass">CONFIRM PASSWORD</label>
           <input type="password" id="confirm-pass" name="password" minlength="8" required
           pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" placeholder=" ">
           <span></span>
+          <div class="verify"></div>
         </div>
       </div>
     </form>
